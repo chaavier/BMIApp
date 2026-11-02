@@ -1,17 +1,23 @@
 # BMIApp
 
-Aplikasi kalkulator BMI (Body Mass Incex) berbasis JavaFX dan Maven. Memiliki perhitungan yang berbeda untuk pria dan wanita,
-dengan output berat badan ideal dan kategori (Underweight, Normal, Overweight).
+Aplikasi kalkulator BMI (Body Mass Index) berbasis JavaFX SceneBuilder (FXML) dan Maven. Memiliki perhitungan yang berbeda untuk pria dan wanita,
+dengan output berat badan ideal dan kategori (Underweight, Normal, Overweight). Proyek ini dibuat untuk memenuhi tugas mata kuliah Pemrograman Lanjut dengan menerapkan prinsip Object-Oriented Programming (OOP) dan pola arsitektur MVC (Model-View-Controller).
 
-## Fitur
-- Input tinggi badan (cm), berat badan (kg), dan gender
-- Rumus berat ideal berbeda untuk pria dan wanita
-- Output nilai BMI, berat ideal, dan kategori berwarna
+## Fitur Utama
 
-## Kebutuhan
+- **Perhitungan BMI Tanpa Input Nama**: Pengguna cukup memasukkan tinggi badan (cm), berat badan (kg), dan memilih jenis kelamin lewat radio button. Aplikasi menampilkan nilai BMI dengan rumus $BMI = \frac{Berat\ (kg)}{(Tinggi\ (m))^2}$ sebagai informasi tambahan.
+- **Perhitungan Persentase Berbeda untuk Pria dan Wanita (Polimorfisme)**: Aplikasi menghitung persentase berat badan terhadap berat ideal menurut rumus Broca. `BmiPria` mengurangi 10% dari `tinggi - 100`, sedangkan `BmiWanita` mengurangi 15%.
+  - Pria: berat ideal = (tinggi - 100) × 0,90
+  - Wanita: berat ideal = (tinggi - 100) × 0,85
+  - Persentase = berat badan ÷ berat ideal × 100
+- **Tampilan Hasil Berwarna**: Kategori ditampilkan dalam badge berwarna, yaitu kuning untuk Underweight, hijau untuk Normal, dan merah untuk Overweight. Hasil juga memuat gender, nilai BMI, berat ideal, dan persentase.
+- **Validasi Input & Penanganan Eksepsi**: Aplikasi memvalidasi input kosong atau format non-angka (`NumberFormatException`), serta nilai di luar batas wajar, yaitu tinggi 100–250 cm dan berat 20–300 kg (`IllegalArgumentException`), dengan pesan peringatan berwarna merah pada antarmuka. Koma desimal seperti `65,5` juga diterima.
+- **Mode Terminal & GUI**: Menyediakan kelas `MainApp` untuk tampilan antarmuka grafis (JavaFX) dan `DemoTerminalMode` untuk pengujian cepat melalui konsol/terminal.
+
+## Kebutuhan Sistem
 - JDK 17 atau lebih baru
-- Maven (sudah termasuk di NetBeans)
-- NetBeans IDE
+- Apache Maven (sudah terintegrasi di NetBeans / IntelliJ / Eclipse)
+- JavaFX SceneBuilder
 
 ## Cara Menjalankan
 1. Clone repository:
