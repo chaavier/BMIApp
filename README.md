@@ -5,7 +5,7 @@ dengan output berat badan ideal dan kategori (Underweight, Normal, Overweight). 
 
 ## Fitur Utama
 
-- **Perhitungan BMI Tanpa Input Nama**: Pengguna cukup memasukkan tinggi badan (cm), berat badan (kg), dan memilih jenis kelamin lewat radio button. Aplikasi menampilkan nilai BMI dengan rumus $BMI = \frac{Berat\ (kg)}{(Tinggi\ (m))^2}$ sebagai informasi tambahan.
+- **Perhitungan BMI Tanpa Input Nama**: Pengguna cukup memasukkan tinggi badan (cm), berat badan (kg), dan memilih jenis kelamin lewat radio button.
 - **Perhitungan Persentase Berbeda untuk Pria dan Wanita (Polimorfisme)**: Aplikasi menghitung persentase berat badan terhadap berat ideal menurut rumus Broca. `BmiPria` mengurangi 10% dari `tinggi - 100`, sedangkan `BmiWanita` mengurangi 15%.
   - Pria: berat ideal = (tinggi - 100) × 0,90
   - Wanita: berat ideal = (tinggi - 100) × 0,85
@@ -24,14 +24,21 @@ dengan output berat badan ideal dan kategori (Underweight, Normal, Overweight). 
    ```
    git clone https://github.com/chaavier/BMIApp.git
    ```
-2. Buka NetBeans, pilih File > Open Project, lalu pilih folder `BmiApp`.
-3. Klik kanan project, pilih Run (atau tekan F6).
-4. Atau lewat terminal: `mvn clean javafx:run`
+      (Membutuhkan Git. Alternatifnya, klik tombol **Code > Download ZIP** di halaman repository, lalu ekstrak.)
+2. Buka Apache NetBeans IDE, lalu pilih menu **File > Open Project...** dan arahkan ke folder proyek `BMIApp`.
 
-## Rumus
-- Pria: berat ideal = (tinggi - 100) x 0,90
-- Wanita: berat ideal = (tinggi - 100) x 0,85
-- Underweight < 90%, Normal 90-110%, Overweight > 110%
+3. Klik kanan pada nama proyek di panel **Projects**, lalu pilih **Clean and Build** (`Shift + F11`) agar Maven mengunduh seluruh dependensi JavaFX (`javafx-controls` dan `javafx-fxml`). Pastikan komputer terhubung ke internet pada langkah ini.
+
+4. Untuk menjalankan **Mode GUI** (tampilan kalkulator visual):
+   - Klik kanan pada nama proyek, lalu pilih **Run** (atau tekan `F6`).
+   - Atau buka **Source Packages > main > MainApp.java**, klik kanan, lalu pilih **Run File** (atau tekan `Shift + F6`).
+
+5. Untuk menjalankan **Mode Terminal** (konsol CLI):
+   - Buka **Source Packages > main > DemoTerminalMode.java**.
+   - Klik kanan pada `DemoTerminalMode.java`, lalu pilih **Run File** (atau tekan `Shift + F6`).
+   - Hasil perhitungan akan tampil di jendela **Output** pada bagian bawah NetBeans.
+
+**Alternatif lewat terminal** (membutuhkan Maven terpasang): buka terminal di folder proyek, lalu jalankan `mvn clean javafx:run`.
 
 ## Screenshot
 ![Tampilan awal](screenshots/form.png)
